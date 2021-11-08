@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VuelveAqui</string>
+    <string name="imagen">imagen</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="regresar">Regresar</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Usuario no valido</string>
+    <string name="invalid_password">La contraseña debe tener mas de 5 caracteres</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="vuelve_aqui">Vuelve Aqui</string>
+</resources>
