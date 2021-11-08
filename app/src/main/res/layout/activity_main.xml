@@ -5,6 +5,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E5DA"
     tools:context=".MainActivity">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/imagen"
-        android:scaleType="center"
+        android:scaleType="centerInside"
         app:barrierAllowsGoneWidgets="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/main" />
+        app:srcCompat="@drawable/logo_beige" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/ingresar"
-            android:textColor="#00695C" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/register"
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/registrarse"
-            android:textColor="#00695C" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

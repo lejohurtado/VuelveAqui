@@ -4,59 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
+    android:background="#E8E5DA"
     tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFEB3B"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="219dp"
-            android:text="@string/vuelve_aqui"
-            android:textSize="34sp" />
+            android:layout_height="197dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_beige" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="Nombres y Apellidos"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:outlineSpotShadowColor="@color/black" />
+            android:hint="Nombres y Apellidos"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="Teléfono"
-            android:ems="10"
-            android:inputType="phone" />
+            android:hint="Teléfono"
+            android:inputType="phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="Fecha de nacimiento"
-            android:ems="10"
-            android:inputType="date" />
+            android:hint="Fecha de nacimiento"
+            android:inputType="date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/idMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="Correo"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:hint="Correo electronico"
+            android:inputType="textEmailAddress"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:id="@+id/idPassword"
