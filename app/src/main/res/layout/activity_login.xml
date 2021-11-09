@@ -60,23 +60,23 @@
 
         <Button
             android:id="@+id/come_back"
-            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:text="@string/regresar"
-            android:textColor="@color/white"
-            />
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/login"
-            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             android:enabled="false"
-            android:text="@string/ingresar"
-            android:textColor="@color/white"/>
+            android:text="@string/ingresar" />
     </LinearLayout>
 
     <ProgressBar
@@ -102,6 +102,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_beige" />
+        app:srcCompat="@drawable/logo_beige"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
