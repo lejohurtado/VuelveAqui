@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vuelveaqui.MainActivity;
+import com.example.vuelveaqui.MapsActivity;
 import com.example.vuelveaqui.R;
 import com.example.vuelveaqui.ui.login.LoginViewModel;
 import com.example.vuelveaqui.ui.login.LoginViewModelFactory;
@@ -123,9 +124,11 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
+                /*loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                        passwordEditText.getText().toString());*/
+                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                startActivity(intent);
             }
         });
 

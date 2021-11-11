@@ -12,4 +12,5 @@
     <string name="invalid_password">La contraseña debe tener mas de 5 caracteres</string>
     <string name="login_failed">"Login failed"</string>
     <string name="vuelve_aqui">Vuelve Aqui</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
