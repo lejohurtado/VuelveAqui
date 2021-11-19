@@ -14,11 +14,13 @@ import com.example.vuelveaqui.data.model.User;
 import com.example.vuelveaqui.databinding.ActivityRegisterBinding;
 import com.example.vuelveaqui.repository.UserRepository;
 import com.example.vuelveaqui.ui.login.LoginActivity;
+import com.example.vuelveaqui.util.Validations;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
+    private Validations validations = new Validations();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         final TextInputEditText telefono = binding.idTelefono;
         final TextInputEditText correo = binding.idCorreoElectronico;
         final TextInputEditText contrasena = binding.idContrasena;
+        final TextInputEditText contrasena2 = binding.idConfirmarContrasena;
 
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,17 +51,24 @@ public class RegisterActivity extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(validations.passMore5Caracter(contrasena.getText().toString())) {
+                    if (validations.passEquals(contrasena.getText().toString(), contrasena2.getText().toString())) {
+                        //Logica para guardar en bd
+                        UserRepository userRepository = new UserRepository(v.getContext());
+                        userRepository.insert_user(new User(nombres.getText().toString(), Long.parseLong(telefono.getText().toString()), correo.getText().toString(), contrasena.getText().toString()));
 
-                //Logica para guardar en bd
-                UserRepository userRepository = new UserRepository(v.getContext());
-                userRepository.insert_user(new User(nombres.getText().toString(),Long.parseLong(telefono.getText().toString()),correo.getText().toString(),contrasena.getText().toString()));
+                        String register = "Registro exitoso" + nombres;
+                        // TODO : initiate successful logged in experience
+                        Toast.makeText(getApplicationContext(), register, Toast.LENGTH_LONG).show();
 
-                String register = "Registro exitoso" + nombres;
-                // TODO : initiate successful logged in experience
-                Toast.makeText(getApplicationContext(), register, Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(v.getContext(), LoginActivity.class);
-                startActivity(intent);
+                        Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "La contraseña no es igual, por favor verificar", Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "La contraseña debe tener mas de 5 caracteres", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
