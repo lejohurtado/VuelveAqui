@@ -4,21 +4,23 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import android.content.Context;
 import android.util.Patterns;
 
-import com.example.vuelveaqui.data.LoginRepository;
+import com.example.vuelveaqui.data.model.User;
 import com.example.vuelveaqui.data.Result;
 import com.example.vuelveaqui.data.model.LoggedInUser;
 import com.example.vuelveaqui.R;
+import com.example.vuelveaqui.repository.UserRepository;
 
 public class LoginViewModel extends ViewModel {
 
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
-    private LoginRepository loginRepository;
+    private final UserRepository userRepository;
 
-    LoginViewModel(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
+    public LoginViewModel(Context context) {
+        this.userRepository = new UserRepository(context);
     }
 
     LiveData<LoginFormState> getLoginFormState() {
@@ -31,7 +33,7 @@ public class LoginViewModel extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = loginRepository.login(username, password);
+        Result<LoggedInUser> result = userRepository.login_user(new User(username, password));
 
         if (result instanceof Result.Success) {
             LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();

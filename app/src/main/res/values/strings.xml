@@ -5,6 +5,7 @@
     <string name="registrarse">Registrarse</string>
     <string name="regresar">Regresar</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
     <string name="prompt_email">Correo</string>
     <string name="prompt_password">Contraseña</string>
     <string name="welcome">"Welcome !"</string>

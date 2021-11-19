@@ -2,14 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idRegister"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E8E5DA"
     tools:context=".RegisterActivity">
 
     <LinearLayout
-        android:layout_width="375dp"
-        android:layout_height="642dp"
+        android:layout_width="388dp"
+        android:layout_height="529dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,6 +40,7 @@
             android:hint="Nombres y Apellidos">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idNombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -54,25 +56,10 @@
             android:hint="Teléfono">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/idDate"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:hint="Fecha de nacimiento">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,6 +73,7 @@
             android:hint="Correo electronico">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idCorreoElectronico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
@@ -102,6 +90,7 @@
             android:hint="Contraseña">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idContrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -118,6 +107,7 @@
             android:hint="Confirmar contraseña">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/idConfirmarContrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -138,16 +128,16 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/idButtonBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             android:text="@string/regresar" />
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/idButtonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

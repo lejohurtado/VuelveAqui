@@ -27,8 +27,6 @@ import android.widget.Toast;
 import com.example.vuelveaqui.MainActivity;
 import com.example.vuelveaqui.MapsActivity;
 import com.example.vuelveaqui.R;
-import com.example.vuelveaqui.ui.login.LoginViewModel;
-import com.example.vuelveaqui.ui.login.LoginViewModelFactory;
 import com.example.vuelveaqui.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -45,8 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
-                .get(LoginViewModel.class);
+        loginViewModel = new ViewModelProvider(this,new LoginViewModelFactory(this)).get(LoginViewModel.class);
 
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
@@ -82,6 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
+                    Intent intentLoginSuccessFull = new Intent(getApplicationContext(), MapsActivity.class);
+                    startActivity(intentLoginSuccessFull);
                 }
                 setResult(Activity.RESULT_OK);
 
@@ -124,11 +123,9 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*loadingProgressBar.setVisibility(View.VISIBLE);
+                loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());*/
-                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-                startActivity(intent);
+                        passwordEditText.getText().toString());
             }
         });
 
